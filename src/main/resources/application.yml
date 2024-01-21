@@ -1,17 +1,19 @@
+server:
+  port: 9090
+
 spring:
   datasource:
-    type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
     username: root
-    url: jdbc:mysql://localhost:3306/cms?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://148.100.76.63:3306/cms?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
     password: 123456
   devtools:
     restart:
       enabled: true
       additional-paths: src/main/java
-server:
-  port: 9000
 
-mybatis-plus:
-  configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+pagehelper:
+  reasonable: true
+  params: count=countSql
+  support-methods-arguments: true
